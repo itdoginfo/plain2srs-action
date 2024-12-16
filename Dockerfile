@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY --from=sing-box /usr/local/bin/sing-box /bin/sing-box
 
-ENTRYPOINT ["python", "plain2srs.py"]
+ENTRYPOINT ["python", "/app/plain2srs/plain2srs.py"]

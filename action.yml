@@ -14,12 +14,15 @@ inputs:
   output_name:
     description: "Name for the output .srs file"
     required: true
+
 outputs:
   output_path:
     description: "Path to the generated .srs file"
+
 runs:
   using: "docker"
   image: "docker://itdoginfo/plain2srs-action:20241216"
+  name: "plain2srs"
   args:
     - "-i"
     - "${{ inputs.input_file }}"

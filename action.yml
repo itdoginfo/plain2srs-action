@@ -1,0 +1,28 @@
+---
+name: "Plain2srs Converter"
+description: "Converts plain text files to sing-box .srs"
+author: "itdoginfo"
+
+branding:
+  icon: "file"
+  color: "blue"
+
+inputs:
+  input_file:
+    description: "Path to the input file in the repository"
+    required: true
+  output_name:
+    description: "Name for the output .srs file"
+    required: true
+outputs:
+  output_path:
+    description: "Path to the generated .srs file"
+runs:
+  using: "docker"
+  image: "docker://itdoginfo/plain2srs-action:20241216"
+  args:
+    - "-i"
+    - "${{ inputs.input_file }}"
+    - "-o"
+    - "${{ inputs.output_name }}"
+    - "-c"
